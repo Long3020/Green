@@ -1,0 +1,66 @@
+@use 'abstracts/variables' as var;
+
+.notify {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    color: var.$color-text;
+    padding: 12px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10000;
+
+    .notify-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background-color: yellow;
+        border-radius: 4px;
+        animation: notify-progress-bar 3s linear forwards;
+    }
+
+    @keyframes notify-progress-bar {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    .notify-icon {
+        font-size: var.$font-size-lg;
+    }
+
+    .notify-1 {
+        font-size: var.$font-size-sm;
+        margin-bottom: 4px;
+    }
+
+    .notify-2 {
+        font-size: var.$font-size-tiny;
+    }
+
+    #close-icon {
+        align-self: flex-start;
+        line-height: 1;
+        cursor: var.$cursor;
+    }
+}
+
+.notify-success, .notify-contact {
+    background-color: var.$color-primary;
+}
+
+.notify-error {
+    background-color: var.$color-close;
+}
+
+.notify.show {
+    display: flex;
+    opacity: 1;
+}

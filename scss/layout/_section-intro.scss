@@ -1,0 +1,69 @@
+@use 'abstracts/variables' as var;
+
+#section-intro {
+    color: var.$color-dark;
+    width: 100%;
+
+    #intro {
+        width: 100%;
+
+        #title1, #title2 {
+            font-size: var.$font-size-lg;
+            font-weight: bold;
+        }
+
+        #title2 {
+            color: var.$color-primary;
+        }
+
+        #content {
+            font-size: var.$font-size-sm;
+        }
+
+        .slides {
+            overflow: hidden;
+
+            .slick-list {
+                margin-left: -3rem;
+
+                .slick-slide {
+                    padding-left: 3rem;
+
+                    .slide {
+                        background-color: var.$color-primary;
+                        font-size: var.$font-size-sm;
+                        color: var.$color-text;
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+
+                        .label {
+                            display: flex;
+                            align-items: center;
+                            font-weight: bold;
+                            margin-bottom: 1rem;
+
+                            .fa-bug {
+                                color: var.$color-primary;
+                                background-color: var.$color-light;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 4rem;
+                                height: 4rem;
+                                border-radius: 50%;
+                                font-size: var.$font-size-lg;
+                                margin-right: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 992px) {
+            .picture {
+                max-height: 25rem;
+            }
+        }
+    }
+}

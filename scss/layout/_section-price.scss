@@ -1,0 +1,150 @@
+@use 'abstracts/variables' as var;
+
+#section-price {
+    background-color: var.$color-primary;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    #title1 {
+        color: var.$color-text;
+        font-size: var.$font-size-lg;
+        font-weight: bold;
+    }
+
+    #title2 {
+        font-size: var.$font-size-sm;
+        text-align: center;
+    }
+
+    .slick-wrapper {
+        @media (max-width: 540px) {
+            max-width: 300px;
+        }
+
+        .slides {
+            overflow: hidden;
+            padding: 0 8rem;
+
+            @media (max-width: 767px) {
+                padding: 0 16rem;
+            }
+
+            @media (max-width: 540px) {
+                padding: 0 4rem;
+            }
+
+            .slick-list {
+                margin-left: calc(-1*var.$spacing-section-price);
+                margin-right: calc(-1*var.$spacing-section-price);
+                
+                .slick-center { 
+                    .slide {
+                        background-color: var.$color-light;
+                        color: var.$color-primary;
+                        border: 3px solid var.$color-light;
+                        border-radius: 2rem;
+                        font-size: var.$font-size-sm;
+                        transform: scale(1.2);
+
+                        .contact-now {
+                            border: solid 2px var.$color-primary !important;
+                            transition: background-color 0.3s ease, color 0.3s ease !important;
+
+                            &:hover {
+                                background-color: var.$color-primary !important;
+                                color: var.$color-text !important;
+                            }
+                        }
+                    }
+                }
+
+                .slick-slide {
+                    padding-left: var.$spacing-section-price;
+                    padding-right: var.$spacing-section-price;
+
+                    .slideWrapper {
+                        padding: 4rem 0;
+
+                        .slide {
+                            min-height: 300px;
+                            border: 3px solid var.$color-light;
+                            border-radius: 2rem;
+                            font-size: var.$font-size-tiny;
+
+                            @media (min-width: 768px) {
+                                min-height: 400px;
+                            }
+
+                            .item {
+                                font-weight: bold;
+                                padding: 0 1rem 1rem 2rem;
+                            }
+
+                            .item:first-child {
+                                padding-top: 4rem;
+                            }
+
+                            .contact, .contact-now {
+                                text-align: center;
+                            }
+
+                            .contact {
+                                padding-bottom: 1rem;
+                            }
+
+                            .contact-now {
+                                padding: 10px 20px;
+                                border: solid 2px var.$color-light;
+                                border-radius: 10px;
+                                font-weight: bold;
+                                cursor: var.$cursor;
+                                transition: background-color 0.3s ease, border 0.3s ease;
+
+                                &:hover {
+                                background-color: var.$color-contact-hover;
+                                border: solid 2px var.$color-contact-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .prev-slide, .next-slide {
+            position: absolute;
+            cursor: var.$cursor;
+            font-size: var.$font-size-sm;
+            z-index: 1;
+            border-radius: 50%;      
+            height: 2rem;
+            width: 2rem;
+            box-sizing: border-box;
+            background-color: var.$color-primary;
+        }
+
+        .prev-slide {
+            margin-left: var.$spacing-btn-section-price-sm;
+
+            @media (min-width: 768px) {
+                margin-left: var.$spacing-btn-section-price-md;
+            }
+
+            @media (max-width: 540px) {
+                margin-left: 1rem;
+            }
+        }
+
+        .next-slide {
+            margin-right: var.$spacing-btn-section-price-sm;
+
+            @media (min-width: 768px) {
+                margin-right: var.$spacing-btn-section-price-md;
+            }
+
+            @media (max-width: 540px) {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

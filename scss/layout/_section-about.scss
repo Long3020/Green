@@ -1,0 +1,37 @@
+@use 'abstracts/variables' as var;
+
+#section-about {
+    color: var.$color-dark;
+
+    .picture {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #title1, #title2, #title3, .title-description {
+        font-weight: bold;
+    }
+
+    #title1, #title2 {
+        font-size: var.$font-size-lg;
+    }
+
+    #title2 {
+        color: var.$color-primary;
+    }
+
+    #title3, .title-description, .description {
+        font-size: var.$font-size-sm;
+    }
+
+    .title-description, .check-icon, .description {
+        margin-top: 1rem;
+    }
+
+    .check-icon {
+        color: var.$color-primary;
+        margin-right: 10px;
+    }
+}

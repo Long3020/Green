@@ -1,0 +1,22 @@
+@use 'abstracts/variables' as var;
+
+#body {
+  font-family: var.$primary-fonts;
+  font-size: var.$font-size-base;
+  color: var.$color-text;
+  position: relative;
+}
+
+#main {
+  position: relative;
+  padding-top: calc(var.$desktop-header-height + var.$desktop-navbar-height);
+
+  @media (max-width: 992px) {
+    padding-top: var.$mobile-navbar-container-height;
+  }
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}

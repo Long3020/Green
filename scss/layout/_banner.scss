@@ -1,0 +1,40 @@
+@use 'abstracts/variables' as var;
+
+#banner {
+  position: relative;
+  height: 40vw; 
+  overflow: hidden;
+
+  .slick-slider, .slick-list, .slick-track, .slick-slide > div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .slide {
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    bottom: 0;
+    background-color: rgba(var.$color-primary, 0.5);
+    text-align: center;
+    color: var.$color-light;
+    font-size: var.$font-size-sm-md;
+    z-index: 2;
+    padding: 0.5rem;
+  }
+
+  .underlined {
+    text-decoration: underline;
+    cursor: var.$cursor;
+  }
+}

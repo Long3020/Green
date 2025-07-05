@@ -1,0 +1,171 @@
+@use 'abstracts/variables' as var;
+@use 'sass:color';
+
+#section-question {
+    color: var.$color-dark;
+    background-color: var.$color-secondary;
+    max-width: 1600px;
+
+    #title {
+        font-size: var.$font-size-lg;
+        font-weight: bold;
+    }
+
+    #question, #answer {
+        padding: 0 2rem;
+
+        .title-wrapper {
+            background-color: var.$color-muted;
+            border-radius: var.$border-radius-section-question-title;
+
+            .title {
+                background-color: var.$color-primary;
+                width: fit-content;
+                font-size: var.$font-size-sm-md;
+                color: var.$color-text;
+                padding: 0.5rem 3rem;
+                border-radius: var.$border-radius-section-question-title;
+            }
+        }
+    }
+
+    #question {
+
+        .question-container :first-child {
+            padding-top: 0;
+        }
+
+        .question {
+            color: var.$color-primary;
+            border-bottom: 2px solid var.$color-muted;
+            padding: 1.5rem 0;
+
+            .question-icon {
+                font-size: var.$font-size-sm-md;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                        align-self: flex-start;
+        line-height: 1;
+            }
+
+            .mini-question-title {
+                font-size: var.$font-size-sm;
+                font-weight: bold;
+            }
+
+            .collapse-icon {
+                font-size: var.$font-size-sm;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                cursor: var.$cursor;
+
+                i {
+                    transition: transform 0.3s ease;
+                }
+
+                i.rotated {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .mini-question {
+                color: var.$color-dark;
+                font-size: var.$font-size-tiny;
+                padding-top: 1rem;
+                position: relative;
+                cursor: var.$cursor;
+
+                &::after {
+                    display: none;
+                    content: "\25CF\2014";
+                    color: var.$color-primary;
+                    position: absolute;
+                    right: -87px;        
+                    font-size: var.$font-size-base;
+                    letter-spacing: -2px;
+                }
+
+                @media (max-width: 1399.98px) {
+                    &::after {
+                        right: -81px;
+                    } 
+                }
+
+                @media (max-width: 1199.98px) {
+                    &::after {
+                        right: -76px;
+                    } 
+                }
+
+                @media (max-width: 991.98px) {
+                    &::after {
+                        right: -70px;
+                    } 
+                }
+
+                @media (max-width: 767.98px) {
+                    &::after {
+                        display: none !important;
+                    } 
+                }
+
+                &.active {
+                    color: var.$color-primary;
+
+                    &::after {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    #answer {
+        display: flex;             
+
+        .answer-wrapper {
+            flex: 1;                 
+            display: flex;        
+            flex-direction: column;
+
+            .answer {
+                flex: 1;           
+                font-size: var.$font-size-tiny;
+                border: 1px solid var.$color-primary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 40px;
+                border-radius: 8px;
+                overflow: hidden;
+
+                .answer-content {
+                    overflow-y: auto;
+                    &::-webkit-scrollbar {
+                        width: 8px; 
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: transparent;
+                        border-radius: 4px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: var.$color-muted;
+                        border-radius: 4px;
+                        border: 2px solid transparent;
+                        background-clip: content-box;
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        background-color: color.adjust(var.$color-muted, $lightness: -10%);
+                    }
+
+                    .answer-title {
+                        font-size: var.$font-size-sm;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
